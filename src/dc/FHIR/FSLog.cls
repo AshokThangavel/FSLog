@@ -1,3 +1,4 @@
+/// FSLog details
 Class dc.FHIR.FSLog Extends %CSP.Page [ ProcedureBlock ]
 {
 

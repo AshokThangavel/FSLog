@@ -16,7 +16,6 @@
     // create IRISAPP namespace
     do $SYSTEM.OBJ.Load("/home/irisowner/dev/App.Installer.cls", "ck")
     set sc = ##class(App.Installer).setup()
-
     zn "IRISAPP"
     zpm "load /home/irisowner/dev/ -v":1:1
     halt
