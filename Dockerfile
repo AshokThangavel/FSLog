@@ -1,17 +1,16 @@
 ARG IMAGE=intersystemsdc/irishealth-community
-ARG IMAGE=intersystemsdc/iris-community
 FROM $IMAGE
 
 WORKDIR /home/irisowner/dev
 
 ARG TESTS=0
-ARG MODULE="objectscript-template"
-ARG NAMESPACE="USER"
+ARG MODULE="Web-FSLog"
+ARG NAMESPACE="IRISAPP"
 
 ## Embedded Python environment
 ENV IRISUSERNAME "_SYSTEM"
 ENV IRISPASSWORD "SYS"
-ENV IRISNAMESPACE "USER"
+ENV IRISNAMESPACE "IRISAPP"
 ENV PYTHON_PATH=/usr/irissys/bin/
 ENV PATH "/usr/irissys/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/irisowner/bin"
 
