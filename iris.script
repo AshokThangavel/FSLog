@@ -10,12 +10,13 @@
     set prop("AutheEnabled")=48
     do ##class(Security.Services).Modify("%Service_CallIn",.prop)
 
-    zpm "install passwordless"
-    ; importing the source code of the repository as ZPM module
-    
     // create IRISAPP namespace
     do $SYSTEM.OBJ.Load("/home/irisowner/dev/App.Installer.cls", "ck")
     set sc = ##class(App.Installer).setup()
     zn "IRISAPP"
-    zpm "load /home/irisowner/dev/ -v":1:1
+    zpm "load /home/irisowner/dev/ -v":1
+
+    ; For the passwordless module to work, it must be executed after all installations
+    zpm "install passwordless"
+    ; importing the source code of the repository as ZPM module
     halt
