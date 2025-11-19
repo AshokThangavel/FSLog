@@ -6,7 +6,7 @@
 			"name": "Web-FSLog.ZPM",
 			"Module": {
 				"Name": "Web-FSLog",
-				"Version": "1.0.0",
+				"Version": "1.0.1",
 				"Packaging": "module",
 				"SourcesRoot": "src",
 				"Resource": {
