@@ -1,0 +1,18 @@
+{
+	"Export": {
+		"generator": "Cache",
+		"version": "25",
+		"Document": {
+			"name": "Web-FSLog.ZPM",
+			"Module": {
+				"Name": "Web-FSLog",
+				"Version": "1.0.0",
+				"Packaging": "module",
+				"SourcesRoot": "src",
+				"Resource": {
+					"Name": "dc.FHIR.PKG"
+				}
+			}
+		}
+	}
+}
