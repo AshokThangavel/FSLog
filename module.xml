@@ -3,6 +3,7 @@
   <Document name="Web-FSLog.ZPM">
     <Module>
       <Name>Web-FSLog</Name>
+      <ExternalName>webfslog</ExternalName>
       <Version>1.0.1</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
