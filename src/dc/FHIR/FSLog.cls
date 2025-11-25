@@ -11,6 +11,7 @@ Parameter CATEGORY As STRING = "FHIR";
 ClassMethod OnRenderScreen() As %Status
 {
 	#define del "|"
+	set channelType =$O(^FSLogChannel(""))
 	&html<
 
 <html lang="en">
@@ -37,7 +38,7 @@ ClassMethod OnRenderScreen() As %Status
                 <h1>FSLOG Dashboard</h1>
                 <div class="status-badge">
                     <i class="fas fa-database"></i>
-                    FSLogChannel is <span>SQL</span>
+                    FSLogChannel is <span>#(channelType)#</span>
                 </div>
             </div>
         </div>
