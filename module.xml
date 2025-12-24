@@ -4,10 +4,11 @@
     <Module>
       <Name>Web-FSLog</Name>
       <ExternalName>webfslog</ExternalName>
+      <Description>Web File System Log Module</Description>
       <Version>1.0.2</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="dc.FHIR.PKG"/>
+      <Resource Name="FHIR.PKG"/>
     </Module>
   </Document>
 </Export>

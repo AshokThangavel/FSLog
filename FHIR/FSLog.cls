@@ -1,5 +1,4 @@
-/// FSLog details
-Class dc.FHIR.FSLog Extends %CSP.Page
+Class FHIR.FSLog Extends %CSP.Page
 {
 
 Parameter Title As STRING [ Final ] = "FSLOG";
@@ -11,7 +10,7 @@ Parameter CATEGORY As STRING = "FHIR";
 ClassMethod OnRenderScreen() As %Status
 {
 	#define del "|"
-	set channelType =$O(^FSLogChannel(""))
+	Set channelType =$Order(^FSLogChannel(""))
 	&html<
 
 <html lang="en">
@@ -75,19 +74,19 @@ ClassMethod OnRenderScreen() As %Status
                 </thead>
                 <tbody>
 		>
-		s key=""
-		for  {
-			set key = $order(^FSLOG(key), -1, record) quit:key=""
-			set location = $piece(record, $$$del, 1)
-			set timeStamp = $piece(record, $$$del, *)
-			set jobNumber = $piece(location, "^", 3)
-			write "<tr>"
-			write "<td>"_location_"</td>"
-			write "<td> <span class=""type-badge type-sql"">"_ $piece(record, $$$del, 2)_"</span></td>"
-			write "<td class=""message-cell"">"_$piece(record, $$$del, 3, *-1)_"</td>"
-			write "<td class=""timestamp-cell"">"_timeStamp_"</td>"
-			write "<td><span class=""job-number"">"_jobNumber_"</span></td>"
-			write "</tr>"
+		Set key=""
+		For  {
+			Set key = $Order(^FSLOG(key), -1, record) Quit:key=""
+			Set location = $Piece(record, $$$del, 1)
+			Set timeStamp = $Piece(record, $$$del, *)
+			Set jobNumber = $Piece(location, "^", 3)
+			Write "<tr>"
+			Write "<td>"_location_"</td>"
+			Write "<td> <span class=""type-badge type-sql"">"_ $Piece(record, $$$del, 2)_"</span></td>"
+			Write "<td class=""message-cell"">"_$Piece(record, $$$del, 3, *-1)_"</td>"
+			Write "<td class=""timestamp-cell"">"_timeStamp_"</td>"
+			Write "<td><span class=""job-number"">"_jobNumber_"</span></td>"
+			Write "</tr>"
 		}
 
 		&HTML<
@@ -96,7 +95,7 @@ ClassMethod OnRenderScreen() As %Status
         </div>
     </div>
 	>
-	q 1
+	Quit 1
 }
 
 XData Style
@@ -116,7 +115,7 @@ ClassMethod OnPage() As %Status
 
 ClassMethod AppDescription()
 {
-	Q ""
+	Quit ""
 }
 
 ClassMethod OnPageCSPROOT() As %Boolean
@@ -168,7 +167,7 @@ ClassMethod RenderScreen()
 
 ClassMethod LoadCSS()
 {
-	Set obj = ##class(%Dictionary.CompiledXData).%OpenId($Classname()_"||Style")
+	Set obj = ##class(%Dictionary.CompiledXData).%OpenId($ClassName()_"||Style")
 	Return:(obj = "") $$$OK
 	Set xdata = obj.Data
 	Set status = ##class(%XML.TextReader).ParseStream(xdata, .textreader)

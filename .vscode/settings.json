@@ -1,33 +1,20 @@
 {
-    "files.associations": {
-    
-        "Dockerfile*": "dockerfile",
-        "iris.script": "objectscript"
-      },
-    "objectscript.conn" :{
-      "ns": "IRISAPP",
-      "username": "_SYSTEM",
-      "password": "SYS",
-      "docker-compose": {
-        "service": "iris",
-        "internalPort": 52773
-      },
-      "active": true
+    "objectscript.conn": {
+        "active": true,
+        "server": "ubuntu_local_zpm",
+        "ns": "USER"
     },
-    "sqltools.connections": [
-      {
-        "namespace": "IRISAPP",
-        "connectionMethod": "Server and Port",
-        "showSystem": false,
-        "previewLimit": 50,
-        "server": "localhost",
-        "port": 32770,
-        "askForPassword": false,
-        "driver": "InterSystems IRIS",
-        "name": "objectscript-docker",
-        "username": "_SYSTEM",
-        "password": "SYS"
-      }
-    ]
-
+    // Force formatting rules
+    "objectscript.multilineMethodArgs": true,
+    "intersystems.language-server.formatting.expandClassNames": false,
+    "intersystems.language-server.formatting.commands.case": "word",
+    "intersystems.language-server.formatting.commands.length": "long",
+    "intersystems.language-server.formatting.system.case": "word",
+    "intersystems.language-server.formatting.system.length": "long",
+    // Force tab size and indent using spaces
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "files.trimTrailingWhitespace": true
 }
